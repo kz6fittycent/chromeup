@@ -1,5 +1,4 @@
 clear
-
 echo ""
 echo "------------------------------"
 echo ""
@@ -11,8 +10,8 @@ sleep 3
 # VARIABLES
 #######################################
 
-GRAB=`sudo eopkg bi --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/network/web/browser/google-chrome-s>
-NEW=`curl https://raw.githubusercontent.com/getsolus/3rd-party/master/network/web/browser/google-chrome-stable/pspec.xml 2>1 /dev/n>
+GRAB=`sudo eopkg bi --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/network/web/browser/google-chrome-stable/pspec.xml`
+NEW=`curl https://raw.githubusercontent.com/getsolus/3rd-party/master/network/web/browser/google-chrome-stable/pspec.xml 2>1 /dev/null | grep deb | cut -d "/" -f11 | cut -d "_" -f2 | cut -d "-" -f1`
 CURRENT="$(google-chrome-stable --version | cut -d ' ' -f3)"
 
 #######################################
